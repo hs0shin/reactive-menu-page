@@ -1,5 +1,6 @@
 import React from 'react';
+import MainPage from './MainPage';
 
 export default function DummyLogin() {
-    return <h1>로그인 페이지입니다.</h1>
+    return <MainPage />
 };

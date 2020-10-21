@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Topbar = null;
-const Menu = null;
-const PageDescription = null;
-const Page = null;
+import TopBar from '../components/TopBar';
+import Page from '../components/Page';
+import PageDescription from '../components/PageDescription';
+import Menu from '../components/Menu';
 
 const Wrapper = styled.div`
     display: flex;
@@ -13,39 +13,55 @@ const Wrapper = styled.div`
     height: 100%;
 `;
 
-const TopbarWrapper = styled.div`
+const TopBarWrapper = styled.div`
     height: ${props => props.height || '5rem'};
     width: 100%;
 `;
 
+
 const BodyWrapper = styled.div`
-    ${props => props.height ? `height: calc(100%-${props.height})` : '5rem'};
+    ${props => props.height ? `height: calc(100% - ${props.height})` : 'height: calc(100% - 5rem)'};
+    display: flex;
     width: 100%;
     flex-direction: row;
 
+    /*화면이 좌우로 짧을 때  */
     @media only screen and (max-width: 700px) {
         flex-direction: column;
     }
 `;
 
-
-const ReactiveLeft = styled.div`
-    width: 100%;
+const ReactiveLeft = styled.div`   
+    display: flex;
+    flex-basis: 20rem;
+    flex-grow: 0.05;
     height: 100%;
+
+    /*화면이 좌우로 짧을 때  */
+    @media only screen and (max-width: 700px) {
+        flex-basis: 5rem;
+        width:100%;
+    }
 `;
 
 const ReactiveRight = styled.div`
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     height: 100%;
-`;
 
+    @media only screen and (max-width: 700px) {
+        flex-grow: 1;
+        width: 100%;
+    }
+`;
 
 export default function MainPage() {
     return (
         <Wrapper>
-            <TopbarWrapper>
-                <Topbar></Topbar>
-            </TopbarWrapper>
+            <TopBarWrapper>
+                <TopBar></TopBar>
+            </TopBarWrapper>
             <BodyWrapper>
                 <ReactiveLeft><Menu></Menu></ReactiveLeft>
                 <ReactiveRight>
