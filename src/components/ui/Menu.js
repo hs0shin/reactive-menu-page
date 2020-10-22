@@ -3,16 +3,16 @@ import styled, { css } from 'styled-components';
 
 const Wrapper = styled.div`
     display: flex;
-    flex-basis: 7rem;
-    flex-grow: 0.05;
+    height: 100%;
     width: 100%;
-    background-color: lightgray;
+    background-color: lightblue;
 `;
 
-export default function PageDescription({  }) {
+export default function Menu({ children }) {
     return (
         <Wrapper>
-            <h2>This is Page Description.</h2>
+            <h2>This is Menu.</h2>
+            {children}
         </Wrapper>
     );
 }

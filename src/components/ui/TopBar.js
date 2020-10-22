@@ -8,10 +8,11 @@ const Wrapper = styled.div`
     background-color: lightseagreen;
 `;
 
-export default function TopBar({  }) {
+export default function TopBar({ children }) {
     return (
         <Wrapper>
             <h2>This is TopBar.</h2>
+            {children}
         </Wrapper>
     );
 }

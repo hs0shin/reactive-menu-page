@@ -8,10 +8,11 @@ const Wrapper = styled.div`
     background-color: lightcoral;
 `;
 
-export default function Page({ }) {
+export default function Page({ children }) {
     return (
         <Wrapper>
             <h2>This is Page.</h2>
+            {children}
         </Wrapper>
     );
 }
